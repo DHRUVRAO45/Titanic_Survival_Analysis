@@ -1,0 +1,168 @@
+Dataset loaded successfully from the public URL.
+
+=================================================================
+1. DATASET OVERVIEW
+=================================================================
+Number of rows: 891
+Number of columns: 12
+
+Column names:
+['passengerid', 'survived', 'pclass', 'name', 'sex', 'age', 'sibsp', 'parch', 'ticket', 'fare', 'cabin', 'embarked']
+
+First five rows:
+ passengerid  survived  pclass                                                name    sex  age  sibsp  parch           ticket    fare cabin embarked
+           1         0       3                             Braund, Mr. Owen Harris   male 22.0      1      0        A/5 21171  7.2500   NaN        S
+           2         1       1 Cumings, Mrs. John Bradley (Florence Briggs Thayer) female 38.0      1      0         PC 17599 71.2833   C85        C
+           3         1       3                              Heikkinen, Miss. Laina female 26.0      0      0 STON/O2. 3101282  7.9250   NaN        S
+           4         1       1        Futrelle, Mrs. Jacques Heath (Lily May Peel) female 35.0      1      0           113803 53.1000  C123        S
+           5         0       3                            Allen, Mr. William Henry   male 35.0      0      0           373450  8.0500   NaN        S
+
+Data types and non-null counts:
+<class 'pandas.DataFrame'>
+RangeIndex: 891 entries, 0 to 890
+Data columns (total 12 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   passengerid  891 non-null    int64  
+ 1   survived     891 non-null    int64  
+ 2   pclass       891 non-null    int64  
+ 3   name         891 non-null    str    
+ 4   sex          891 non-null    str    
+ 5   age          714 non-null    float64
+ 6   sibsp        891 non-null    int64  
+ 7   parch        891 non-null    int64  
+ 8   ticket       891 non-null    str    
+ 9   fare         891 non-null    float64
+ 10  cabin        204 non-null    str    
+ 11  embarked     889 non-null    str    
+dtypes: float64(2), int64(5), str(5)
+memory usage: 83.7 KB
+
+Summary statistics:
+             count unique                      top freq       mean         std   min     25%      50%    75%       max
+passengerid  891.0    NaN                      NaN  NaN      446.0  257.353842   1.0   223.5    446.0  668.5     891.0
+survived     891.0    NaN                      NaN  NaN   0.383838    0.486592   0.0     0.0      0.0    1.0       1.0
+pclass       891.0    NaN                      NaN  NaN   2.308642    0.836071   1.0     2.0      3.0    3.0       3.0
+name           891    891  Braund, Mr. Owen Harris    1        NaN         NaN   NaN     NaN      NaN    NaN       NaN
+sex            891      2                     male  577        NaN         NaN   NaN     NaN      NaN    NaN       NaN
+age          714.0    NaN                      NaN  NaN  29.699118   14.526497  0.42  20.125     28.0   38.0      80.0
+sibsp        891.0    NaN                      NaN  NaN   0.523008    1.102743   0.0     0.0      0.0    1.0       8.0
+parch        891.0    NaN                      NaN  NaN   0.381594    0.806057   0.0     0.0      0.0    0.0       6.0
+ticket         891    681                   347082    7        NaN         NaN   NaN     NaN      NaN    NaN       NaN
+fare         891.0    NaN                      NaN  NaN  32.204208   49.693429   0.0  7.9104  14.4542   31.0  512.3292
+cabin          204    147                       G6    4        NaN         NaN   NaN     NaN      NaN    NaN       NaN
+embarked       889      3                        S  644        NaN         NaN   NaN     NaN      NaN    NaN       NaN
+
+Missing values per column:
+cabin          687
+age            177
+embarked         2
+passengerid      0
+name             0
+pclass           0
+survived         0
+sex              0
+parch            0
+sibsp            0
+fare             0
+ticket           0
+dtype: int64
+
+=================================================================
+2. DATA CLEANING
+=================================================================
+Exact duplicate rows removed: 0
+Missing values in 'age' filled with median: 28.00
+Missing values in 'embarked' filled with the mode.
+
+Missing values after cleaning:
+cabin              687
+passengerid          0
+pclass               0
+name                 0
+sex                  0
+survived             0
+age                  0
+sibsp                0
+ticket               0
+parch                0
+fare                 0
+embarked             0
+survival_status      0
+family_size          0
+dtype: int64
+
+=================================================================
+3. OVERALL SURVIVAL
+=================================================================
+Overall survival rate: 38.38%
+Passengers who did not survive: 549
+Passengers who survived: 342
+
+Survival summary:
+         Status  Passengers  Percentage
+Did not survive         549   61.616162
+       Survived         342   38.383838
+
+=================================================================
+4. SURVIVAL BY SEX
+=================================================================
+Survival rate by sex (%):
+sex
+female    74.20
+male      18.89
+
+=================================================================
+5. SURVIVAL BY PASSENGER CLASS
+=================================================================
+Survival rate by passenger class (%):
+pclass
+1    62.96
+2    47.28
+3    24.24
+
+=================================================================
+6. AGE DISTRIBUTION BY SURVIVAL
+=================================================================
+
+=================================================================
+7. SURVIVAL BY SEX AND PASSENGER CLASS
+=================================================================
+Survival rate by class and sex (%):
+sex     female   male
+pclass               
+1        96.81  36.89
+2        92.11  15.74
+3        50.00  13.54
+
+=================================================================
+8. TICKET FARE AND SURVIVAL
+=================================================================
+Fare summary by survival outcome:
+                 count  median   mean
+survival_status                      
+Did not survive    549    10.5  22.12
+Survived           342    26.0  48.40
+
+=================================================================
+9. FAMILY SIZE AND SURVIVAL
+=================================================================
+Survival rate by family size (%):
+family_size
+1     30.35
+2     55.28
+3     57.84
+4     72.41
+5     20.00
+6     13.64
+7     33.33
+8      0.00
+11     0.00
+
+=================================================================
+10. CORRELATION HEATMAP
+=================================================================
+
+=================================================================
+PROJECT COMPLETED
+=================================================================
